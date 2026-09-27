@@ -233,7 +233,7 @@ tbody tr:hover .dot{transform:scale(1.12)}
 .g-months{display:flex;background:var(--dark)}
 .g-mlabel-spacer{width:230px;flex-shrink:0}
 .g-mlabels{flex:1;display:flex}
-.g-mlabel{flex:4;text-align:center;font-size:10px;font-weight:800;color:#fff;padding:7px 2px;border-left:1px solid rgba(255,255,255,.15);text-transform:uppercase;letter-spacing:.05em}
+.g-mlabel{flex:4;text-align:center;font-size:10px;font-weight:800;color:#fff;padding:6px 2px;border-left:1px solid rgba(255,255,255,.15);text-transform:uppercase;letter-spacing:.05em;line-height:1.35}
 .g-weeks{display:flex;background:#0A2A5A}
 .g-weeks .g-mlabel-spacer{background:#0A2A5A;display:flex;align-items:center;padding-left:16px;font-size:9px;font-weight:700;color:#B8CEEC;text-transform:uppercase;letter-spacing:.08em}
 .g-wlabels{flex:1;display:flex}
@@ -780,7 +780,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
 <div class="hero">
   <div class="hero-content">
     <h1>Бурбайтал — Фаза 1<br>бурение 7 скважин</h1>
-    <p>Менеджер проекта — Василий Волков &nbsp;·&nbsp; 25 сентября 2026 года</p>
+    <p>Менеджер проекта — Василий Волков &nbsp;·&nbsp; 27 сентября 2026 года</p>
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-v" data-count="8.4" data-fmt="mln">$0</div><div class="hstat-l">Бюджет Фазы 1</div></div>
       <div class="hstat"><div class="hstat-v" data-count="7" data-fmt="int">0</div><div class="hstat-l">Скважин</div></div>
@@ -1056,7 +1056,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
 
 <div class="footer">
   <b>Asker Munai</b> · Бурбайтал Фаза 1<br>
-  Отчёт для акционеров · 25 сентября 2026 года
+  Отчёт для акционеров · 27 сентября 2026 года
 </div>
 
 <script>
@@ -1069,21 +1069,21 @@ const PROCS = [
   {nr:4,  name:"Штанговые винтовые насосы (5шт)",                      contractor:"Куду Индастрис Казахстан",   amt:199569,  fact:158371, stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"10.08.2026", deadline:"",           critical:false, startDate:"08.10.2026"},
   {nr:5,  name:"Строительство ЛЭП",                                    contractor:"",                          amt:133439,  fact:null,   stages:["↺","✓","✓"],                       status:"rev", statusLabel:"На согласовании",  date:"",           deadline:"",           critical:false, startDate:"05.10.2026"},
   {nr:6,  name:"Насосно-компрессорные трубы",                          contractor:"QazExpo Centre",             amt:129944,  fact:112947, stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"12.08.2026", deadline:"",           critical:false, startDate:"30.08.2026"},
-  {nr:7,  name:"Проект обустройства",                                  contractor:"Caspian HES Consulting",    amt:156192,  fact:131629, stages:["○","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"25.05.2026", deadline:"",           critical:false, startDate:"27.11.2026"},
-  {nr:8,  name:"Емкости для нефти",                                    contractor:"Altay Resources",           amt:126316,  fact:126316, stages:["○","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"02.05.2026", deadline:"",           critical:false, startDate:"25.08.2026"},
+  {nr:7,  name:"Проект обустройства",                                  contractor:"Caspian HES Consulting",    amt:156192,  fact:131629, stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"25.05.2026", deadline:"",           critical:false, startDate:"27.11.2026"},
+  {nr:8,  name:"Емкости для нефти",                                    contractor:"Altay Resources",           amt:126316,  fact:126316, stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"02.05.2026", deadline:"",           critical:false, startDate:"25.08.2026"},
   {nr:9,  name:"Путевой подогреватель",                                contractor:"TBS Aktobe",                amt:122105,  fact:91823,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"13.08.2026", deadline:"",           critical:false, startDate:"25.11.2026"},
   {nr:10, name:"Трубопровод и выкидные линии",                         contractor:"ZST Kazakhstan",            amt:112421,  fact:80217,  stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"10.08.2026", deadline:"",           critical:false, startDate:"20.09.2026"},
   {nr:11, name:"Геолого-технологические исследования",                 contractor:"УзеньГеоСервис",            amt:107697,  fact:106620, stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"27.07.2026", deadline:"",           critical:false, startDate:"23.09.2026"},
   {nr:12, name:"Ввод объектов в эксплуатацию",                         contractor:"",                          amt:102568,  fact:null,   stages:["○","○","○"],                       status:"ns",   statusLabel:"Не начато",       date:"",           deadline:"20.12.2026", critical:false, startDate:"29.04.2027"},
   {nr:13, name:"Насосные штанги",                                      contractor:"АЗНО",                      amt:54703,   fact:50350,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"15.07.2026", deadline:"",           critical:false, startDate:"28.09.2026"},
-  {nr:14, name:"Супервайзинг буровых работ",                           contractor:"Супервайзер",               amt:43314,   fact:43314,  stages:["○","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"24.07.2026", deadline:"",           critical:false, startDate:"22.09.2026"},
-  {nr:15, name:"Насос поддержания пластового давления",                contractor:"ТОО \"Актауский машиностроительный завод\"", amt:42105,   fact:43225,  stages:["○","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"02.09.2026", deadline:"10.08.2026", critical:false, startDate:"15.10.2026"},
+  {nr:14, name:"Супервайзинг буровых работ",                           contractor:"Супервайзер",               amt:43314,   fact:43314,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"24.07.2026", deadline:"",           critical:false, startDate:"22.09.2026"},
+  {nr:15, name:"Насос поддержания пластового давления",                contractor:"ТОО \"Актауский машиностроительный завод\"", amt:42105,   fact:43225,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"02.09.2026", deadline:"10.08.2026", critical:false, startDate:"15.10.2026"},
   {nr:16, name:"Лабораторные исследования флюидов",                    contractor:"",                          amt:33331,   fact:null,   stages:["○","○","○"],  status:"ns",  statusLabel:"Не начато",          date:"",           deadline:"25.08.2026", critical:false, startDate:"20.10.2026"},
-  {nr:17, name:"Проект на строительство скважин",                      contractor:"E&P Petro Consulting",      amt:21053,   fact:5275,   stages:["○","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"04.04.2026", deadline:"",           critical:false, startDate:"28.09.2026"},
-  {nr:18, name:"Сепаратор",                                            contractor:"Промышленные системы ПВ",   amt:21053,   fact:20734,  stages:["○","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"01.07.2026", deadline:"",           critical:false, startDate:"03.09.2026"},
+  {nr:17, name:"Проект на строительство скважин",                      contractor:"E&P Petro Consulting",      amt:21053,   fact:5275,   stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"04.04.2026", deadline:"",           critical:false, startDate:"28.09.2026"},
+  {nr:18, name:"Сепаратор",                                            contractor:"Промышленные системы ПВ",   amt:21053,   fact:20734,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"01.07.2026", deadline:"",           critical:false, startDate:"03.09.2026"},
   {nr:19, name:"Лабораторные исследования керна",                      contractor:"ТОО Stratum Cer",           amt:18947,   fact:18927,  stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"24.09.2026", deadline:"",           critical:false, startDate:"20.02.2027"},
-  {nr:20, name:"Штанговые винтовые насосы (2шт)",                      contractor:"НЕТЧ Казахстан",            amt:12211,   fact:10594,  stages:["○","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"25.05.2026", deadline:"",           critical:false, startDate:"11.07.2026"},
-  {nr:21, name:"Запорно-регулирующая арматура",                        contractor:"ТОО Запад СпецКомплект",    amt:10257,   fact:10196,  stages:["○","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"02.09.2026", deadline:"30.09.2026", critical:false, startDate:"30.09.2026"},
+  {nr:20, name:"Штанговые винтовые насосы (2шт)",                      contractor:"НЕТЧ Казахстан",            amt:12211,   fact:10594,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"25.05.2026", deadline:"",           critical:false, startDate:"11.07.2026"},
+  {nr:21, name:"Запорно-регулирующая арматура",                        contractor:"ТОО Запад СпецКомплект",    amt:10257,   fact:10196,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"02.09.2026", deadline:"30.09.2026", critical:false, startDate:"30.09.2026"},
   {nr:22, name:"Отбор глубинных проб флюидов",                          contractor:"",                          amt:8421,    fact:null,   stages:["○","○","○"],                       status:"ns", statusLabel:"Не начато",  date:"",           deadline:"", critical:false, startDate:"08.12.2026"},
   {nr:23, name:"Анализ проб флюидов",                                  contractor:"",                          amt:8421,    fact:null,   stages:["○","○","○"],                       status:"ns", statusLabel:"Не начато",  date:"",           deadline:"", critical:false, startDate:"10.12.2026"},
 ];
@@ -1426,7 +1426,7 @@ function fmtD(s) {
   <div class="g-months">
     <div class="g-mlabel-spacer"></div>
     <div class="g-dl-head">Дедлайн</div>
-    <div class="g-mlabels">${MONTHS.map(m => `<div class="g-mlabel">${m}</div>`).join("")}</div>
+    <div class="g-mlabels">${MONTHS.map(m => { const p = m.split(" "); return `<div class="g-mlabel">${p[0]}<br>${p[1]}</div>`; }).join("")}</div>
   </div>
   <div class="g-weeks">
     <div class="g-mlabel-spacer">Задача</div>
@@ -1459,7 +1459,7 @@ function fmtD(s) {
       }
       html += `<div class="g-row" data-name="${r.name}" data-ps="${r.ps}" data-pe="${r.pe}" data-fs="${r.fs||''}" data-note="${r.note||''}">
         <div class="g-name">${r.name}</div>
-        <div class="g-dl ${dlClassByStr(getGanttDeadline(r.name, sec.sec))}">${getGanttDeadline(r.name, sec.sec)}</div>
+        <div class="g-dl ${(sec.sec==="Мобилизация, бурение, освоение" && r.name==="Скважина 430") ? "green" : dlClassByStr(getGanttDeadline(r.name, sec.sec))}">${getGanttDeadline(r.name, sec.sec)}</div>
         <div class="${r.forecast?'g-bars has-forecast':'g-bars'}">
           <div class="g-grid">${grid}</div>
           ${pw > 0.1 ? `<div class="bar bar-plan" style="left:${pl}%" data-w="${pw}"></div>` : ""}
