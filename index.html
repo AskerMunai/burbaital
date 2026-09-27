@@ -446,7 +446,7 @@ html.pm thead th:nth-child(1),html.pm thead th:nth-child(2){z-index:6}
 
 
 /* ── Пастельные графики ── */
-.pb-rows{display:flex;flex-direction:column;gap:16px;margin-top:6px}
+.pb-rows{display:flex;flex-direction:column;gap:16px;margin-top:6px;flex:1;justify-content:space-between}
 .pb-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
 .pb-name{font-size:13px;font-weight:600}
 .pb-val{font-size:14px;font-weight:800;color:var(--dark)}
@@ -853,7 +853,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
   <div class="kpi k3">
     <div class="kpi-label">Оплачено</div>
     <div class="kpi-value" data-count="0.24" data-fmt="mln">$0</div>
-    <div class="kpi-sub">3.5% от законтрактованного — фактические платежи</div>
+    <div class="kpi-sub">3.2% от законтрактованного — фактические платежи</div>
     <div class="kpi-bar"><div class="kpi-bar-fill" data-w="7.7" style="background:linear-gradient(90deg,#1A7A4A,#4AC87A)"></div></div>
   </div>
   <div class="kpi k4">
@@ -866,43 +866,48 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
 
 <div class="charts" style="grid-template-columns:1fr 1fr">
 
-  <div class="chart-card">
+  <div class="chart-card" style="display:flex;flex-direction:column">
     <div class="chart-title">Бюджет по направлениям работ</div>
-    <div style="font-size:10px;color:#B0BAD0;margin:-6px 0 10px 0;line-height:1.4">Разбивка по направлениям — экспертная оценка, в исходной таблице категории не заданы</div>
     <div class="pb-rows">
-      <div class="pb-row">
-        <div class="pb-head"><span class="pb-name">🛢️ Бурение скважин</span><span class="pb-val">$6,11 млн</span></div>
-        <div class="pb-track"><div class="pb-fill" data-w="100" style="background:linear-gradient(90deg,#93A8E8,#B8C4F0)"></div></div>
-        <div class="pb-pct">72,3% бюджета · 1 договор</div>
+      <div class="st-row">
+        <div class="st-ico" style="background:#E6EAFB;color:#4A5FC8">🛢️</div>
+        <div class="st-info"><div class="st-name">Бурение скважин</div>
+          <div class="st-track"><div class="st-fill" data-w="100" style="background:linear-gradient(90deg,#93A8E8,#B8C4F0)"></div></div>
+          <div class="pb-pct" style="margin-top:5px">72,3% бюджета · 1 договор</div>
+        </div>
+        <div class="st-nums"><span style="font-size:15px;font-weight:800;color:var(--dark)">$6,11 млн</span></div>
       </div>
-      <div class="pb-row">
-        <div class="pb-head"><span class="pb-name">🔬 Услуги и исследования</span><span class="pb-val">$0,98 млн</span></div>
-        <div class="pb-track"><div class="pb-fill" data-w="16.0" style="background:linear-gradient(90deg,#E8C48F,#F0D8B0)"></div></div>
-        <div class="pb-pct">11,6% бюджета · 10 договоров</div>
+      <div class="st-row">
+        <div class="st-ico" style="background:#FEF3E6;color:#8A5A00">🔬</div>
+        <div class="st-info"><div class="st-name">Услуги и исследования</div>
+          <div class="st-track"><div class="st-fill" data-w="16.0" style="background:linear-gradient(90deg,#E8C48F,#F0D8B0)"></div></div>
+          <div class="pb-pct" style="margin-top:5px">11,6% бюджета · 10 договоров</div>
+        </div>
+        <div class="st-nums"><span style="font-size:15px;font-weight:800;color:var(--dark)">$0,98 млн</span></div>
       </div>
-      <div class="pb-row">
-        <div class="pb-head"><span class="pb-name">⚙️ Оборудование и ТМЦ</span><span class="pb-val">$0,72 млн</span></div>
-        <div class="pb-track"><div class="pb-fill" data-w="11.8" style="background:linear-gradient(90deg,#8FCCA8,#B8E0C8)"></div></div>
-        <div class="pb-pct">8,5% бюджета · 9 договоров</div>
+      <div class="st-row">
+        <div class="st-ico" style="background:#E6F6EE;color:#1A7A4A">⚙️</div>
+        <div class="st-info"><div class="st-name">Оборудование и ТМЦ</div>
+          <div class="st-track"><div class="st-fill" data-w="11.8" style="background:linear-gradient(90deg,#8FCCA8,#B8E0C8)"></div></div>
+          <div class="pb-pct" style="margin-top:5px">8,5% бюджета · 9 договоров</div>
+        </div>
+        <div class="st-nums"><span style="font-size:15px;font-weight:800;color:var(--dark)">$0,72 млн</span></div>
       </div>
-      <div class="pb-row">
-        <div class="pb-head"><span class="pb-name">⚡ Инфраструктура</span><span class="pb-val">$0,64 млн</span></div>
-        <div class="pb-track"><div class="pb-fill" data-w="10.5" style="background:linear-gradient(90deg,#D8A8C8,#ECC8DC)"></div></div>
-        <div class="pb-pct">7,6% бюджета · 3 договора</div>
+      <div class="st-row">
+        <div class="st-ico" style="background:#FBEAF3;color:#A83A78">⚡</div>
+        <div class="st-info"><div class="st-name">Инфраструктура</div>
+          <div class="st-track"><div class="st-fill" data-w="10.5" style="background:linear-gradient(90deg,#D8A8C8,#ECC8DC)"></div></div>
+          <div class="pb-pct" style="margin-top:5px">7,6% бюджета · 3 договора</div>
+        </div>
+        <div class="st-nums"><span style="font-size:15px;font-weight:800;color:var(--dark)">$0,64 млн</span></div>
       </div>
     </div>
   </div>
 
-  <div class="chart-card">
-    <div class="chart-title">Договоры по стадиям</div>
+  <div style="display:flex;flex-direction:column;gap:16px">
+  <div class="chart-card" style="padding:20px">
+    <div class="chart-title">Статусы по договорам</div>
     <div class="st-rows">
-      <div class="st-row">
-        <div class="st-ico" style="background:#E6EEF8;color:#1A4A8A">●</div>
-        <div class="st-info"><div class="st-name">Тендер</div>
-          <div class="st-track"><div class="st-fill" data-w="0" style="background:linear-gradient(90deg,#93A8E8,#B8C4F0)"></div></div>
-        </div>
-        <div class="st-nums"><b>0</b><span>$0</span></div>
-      </div>
       <div class="st-row">
         <div class="st-ico" style="background:#E6F6EE;color:#1A7A4A">✓</div>
         <div class="st-info"><div class="st-name">Подписано</div>
@@ -918,13 +923,6 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
         <div class="st-nums"><b>1</b><span>$0,13 млн</span></div>
       </div>
       <div class="st-row">
-        <div class="st-ico" style="background:#EEF0F6;color:#5A6880">○</div>
-        <div class="st-info"><div class="st-name">Прямая закупка</div>
-          <div class="st-track"><div class="st-fill" data-w="0" style="background:linear-gradient(90deg,#C0CCE0,#DCE4F0)"></div></div>
-        </div>
-        <div class="st-nums"><b>0</b><span>$0</span></div>
-      </div>
-      <div class="st-row">
         <div class="st-ico" style="background:#F0F4FA;color:#8A9AB8">○</div>
         <div class="st-info"><div class="st-name">Не начато</div>
           <div class="st-track"><div class="st-fill" data-w="6.5" style="background:linear-gradient(90deg,#D4DCF0,#E8EEF8)"></div></div>
@@ -932,6 +930,28 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
         <div class="st-nums"><b>5</b><span>$0,55 млн</span></div>
       </div>
     </div>
+  </div>
+
+  <div class="chart-card" style="padding:20px">
+    <div class="chart-title">Способ закупа</div>
+    <div class="st-rows">
+      <div class="st-row">
+        <div class="st-ico" style="background:#E6EEF8;color:#1A4A8A">●</div>
+        <div class="st-info"><div class="st-name">Тендер</div>
+          <div class="st-track"><div class="st-fill" data-w="91.2" style="background:linear-gradient(90deg,#93A8E8,#B8C4F0)"></div></div>
+        </div>
+        <div class="st-nums"><b>12</b><span>$7,71 млн</span></div>
+      </div>
+      <div class="st-row">
+        <div class="st-ico" style="background:#EEF0F6;color:#5A6880">↺</div>
+        <div class="st-info"><div class="st-name">Прямой закуп</div>
+          <div class="st-track"><div class="st-fill" data-w="8.8" style="background:linear-gradient(90deg,#C0CCE0,#DCE4F0)"></div></div>
+        </div>
+        <div class="st-nums"><b>11</b><span>$0,74 млн</span></div>
+      </div>
+    </div>
+  </div>
+  </div>
 
 </div>
 </div>
@@ -950,7 +970,15 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
     </div>
     <div style="flex:1;min-width:180px;background:#fff;border-radius:16px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,31,95,.07);border-top:4px solid #5A90CC">
       <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#5A90CC;margin-bottom:6px">Сентябрь 2026</div>
-      <div style="font-size:28px;font-weight:800;color:#001F5F">$2 <span style="font-size:16px;font-weight:600">млн</span></div>
+      <div style="font-size:28px;font-weight:800;color:#001F5F">$1 <span style="font-size:16px;font-weight:600">млн</span></div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
+        <div style="width:20px;height:20px;border-radius:50%;background:#EEF4FC;border:2px solid #5A90CC;display:flex;align-items:center;justify-content:center;font-size:11px;color:#5A90CC">○</div>
+        <span style="font-size:12px;color:#7A9AB8;font-weight:600">Ожидается</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:180px;background:#fff;border-radius:16px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,31,95,.07);border-top:4px solid #5A90CC">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#5A90CC;margin-bottom:6px">Октябрь 2026</div>
+      <div style="font-size:28px;font-weight:800;color:#001F5F">$1 <span style="font-size:16px;font-weight:600">млн</span></div>
       <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
         <div style="width:20px;height:20px;border-radius:50%;background:#EEF4FC;border:2px solid #5A90CC;display:flex;align-items:center;justify-content:center;font-size:11px;color:#5A90CC">○</div>
         <span style="font-size:12px;color:#7A9AB8;font-weight:600">Ожидается</span>
@@ -958,7 +986,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
     </div>
     <div style="flex:1;min-width:180px;background:#fff;border-radius:16px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,31,95,.07);border-top:4px solid #5A90CC">
       <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#5A90CC;margin-bottom:6px">Ноябрь 2026</div>
-      <div style="font-size:28px;font-weight:800;color:#001F5F">$2 <span style="font-size:16px;font-weight:600">млн</span></div>
+      <div style="font-size:28px;font-weight:800;color:#001F5F">$2,4 <span style="font-size:16px;font-weight:600">млн</span></div>
       <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
         <div style="width:20px;height:20px;border-radius:50%;background:#EEF4FC;border:2px solid #5A90CC;display:flex;align-items:center;justify-content:center;font-size:11px;color:#5A90CC">○</div>
         <span style="font-size:12px;color:#7A9AB8;font-weight:600">Ожидается</span>
@@ -966,7 +994,15 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
     </div>
     <div style="flex:1;min-width:180px;background:#fff;border-radius:16px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,31,95,.07);border-top:4px solid #5A90CC">
       <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#5A90CC;margin-bottom:6px">Декабрь 2026</div>
-      <div style="font-size:28px;font-weight:800;color:#001F5F">$2,4 <span style="font-size:16px;font-weight:600">млн</span></div>
+      <div style="font-size:28px;font-weight:800;color:#001F5F">$1 <span style="font-size:16px;font-weight:600">млн</span></div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
+        <div style="width:20px;height:20px;border-radius:50%;background:#EEF4FC;border:2px solid #5A90CC;display:flex;align-items:center;justify-content:center;font-size:11px;color:#5A90CC">○</div>
+        <span style="font-size:12px;color:#7A9AB8;font-weight:600">Ожидается</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:180px;background:#fff;border-radius:16px;padding:20px 24px;box-shadow:0 2px 12px rgba(0,31,95,.07);border-top:4px solid #5A90CC">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#5A90CC;margin-bottom:6px">Январь 2027</div>
+      <div style="font-size:28px;font-weight:800;color:#001F5F">$1 <span style="font-size:16px;font-weight:600">млн</span></div>
       <div style="margin-top:10px;display:flex;align-items:center;gap:6px">
         <div style="width:20px;height:20px;border-radius:50%;background:#EEF4FC;border:2px solid #5A90CC;display:flex;align-items:center;justify-content:center;font-size:11px;color:#5A90CC">○</div>
         <span style="font-size:12px;color:#7A9AB8;font-weight:600">Ожидается</span>
@@ -1039,7 +1075,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
   <div class="leg"><div style="width:22px;height:8px;border-radius:4px;background:#B8D4EC"></div>План</div>
   <div class="leg"><div style="width:22px;height:8px;border-radius:4px;background:rgba(26,74,138,.12);border:1.5px solid rgba(26,74,138,.55);box-sizing:border-box"></div>Прогноз</div>
   <div class="leg"><div style="width:22px;height:8px;border-radius:4px;background:linear-gradient(90deg,#1A4A8A,#2A6AC8)"></div>Факт</div>
-  <div class="leg"><div style="width:2px;height:14px;background:#E03030"></div>Сегодня — 25 сентября 2026</div>
+  <div class="leg"><div style="width:2px;height:14px;background:#E03030"></div>Сегодня — 27 сентября 2026</div>
   <div class="leg" style="margin-left:8px;padding-left:14px;border-left:1px solid #D4DCF0">
     <svg width="14" height="18" viewBox="0 0 14 18" fill="none"><path d="M7 0C7 0 0 7.5 0 11.5C0 15.09 3.13 18 7 18C10.87 18 14 15.09 14 11.5C14 7.5 7 0 7 0Z" fill="#1A1A2E"/><path d="M9.5 13C9.5 14.38 8.38 15.5 7 15.5" stroke="rgba(255,255,255,0.35)" stroke-width="1.2" stroke-linecap="round"/></svg>
     Ввод скважины в эксплуатацию (первый дебит)
@@ -1063,11 +1099,11 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
 /* ═══════════ ДАННЫЕ ═══════════ */
 const RATE = 488;
 const PROCS = [
-  {nr:1,  name:"Бурение",                                              contractor:"КМГ Бурение",                          amt:6105263, fact:6105263, stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"21.09.2026",           deadline:"25.09.2026", critical:false, startDate:"22.09.2026"},
+  {nr:1,  name:"Бурение",                                              contractor:"КМГ Бурение",                          amt:6105263, fact:6105263, stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"21.09.2026",           deadline:"25.09.2026", critical:false, startDate:"22.09.2026"},
   {nr:2,  name:"Геофизические исследования",                           contractor:"Анега Казахстан",            amt:483107,  fact:386486, stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"13.08.2026",           deadline:"",           critical:false, startDate:"26.09.2026"},
   {nr:3,  name:"Система пожарной сигнализации",                        contractor:"",                          amt:395578,  fact:null,   stages:["○","○","○"],                       status:"ns",  statusLabel:"Не начато",          date:"",           deadline:"01.03.2027", critical:false, startDate:"18.06.2027"},
   {nr:4,  name:"Штанговые винтовые насосы (5шт)",                      contractor:"Куду Индастрис Казахстан",   amt:199569,  fact:158371, stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"10.08.2026", deadline:"",           critical:false, startDate:"08.10.2026"},
-  {nr:5,  name:"Строительство ЛЭП",                                    contractor:"",                          amt:133439,  fact:null,   stages:["↺","✓","✓"],                       status:"rev", statusLabel:"На согласовании",  date:"",           deadline:"",           critical:false, startDate:"05.10.2026"},
+  {nr:5,  name:"Строительство ЛЭП",                                    contractor:"",                          amt:133439,  fact:null,   stages:["↺","○","✓"],                       status:"rev", statusLabel:"На согласовании",  date:"",           deadline:"",           critical:false, startDate:"05.10.2026"},
   {nr:6,  name:"Насосно-компрессорные трубы",                          contractor:"QazExpo Centre",             amt:129944,  fact:112947, stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"12.08.2026", deadline:"",           critical:false, startDate:"30.08.2026"},
   {nr:7,  name:"Проект обустройства",                                  contractor:"Caspian HES Consulting",    amt:156192,  fact:131629, stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"25.05.2026", deadline:"",           critical:false, startDate:"27.11.2026"},
   {nr:8,  name:"Емкости для нефти",                                    contractor:"Altay Resources",           amt:126316,  fact:126316, stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"02.05.2026", deadline:"",           critical:false, startDate:"25.08.2026"},
@@ -1078,7 +1114,7 @@ const PROCS = [
   {nr:13, name:"Насосные штанги",                                      contractor:"АЗНО",                      amt:54703,   fact:50350,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"15.07.2026", deadline:"",           critical:false, startDate:"28.09.2026"},
   {nr:14, name:"Супервайзинг буровых работ",                           contractor:"Супервайзер",               amt:43314,   fact:43314,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"24.07.2026", deadline:"",           critical:false, startDate:"22.09.2026"},
   {nr:15, name:"Насос поддержания пластового давления",                contractor:"ТОО \"Актауский машиностроительный завод\"", amt:42105,   fact:43225,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"02.09.2026", deadline:"10.08.2026", critical:false, startDate:"15.10.2026"},
-  {nr:16, name:"Лабораторные исследования флюидов",                    contractor:"",                          amt:33331,   fact:null,   stages:["○","○","○"],  status:"ns",  statusLabel:"Не начато",          date:"",           deadline:"25.08.2026", critical:false, startDate:"20.10.2026"},
+  {nr:16, name:"Лабораторные исследования флюидов",                    contractor:"",                          amt:33331,   fact:null,   stages:["✓","✓","○"],  status:"ns",  statusLabel:"Не начато",          date:"",           deadline:"25.08.2026", critical:false, startDate:"20.10.2026"},
   {nr:17, name:"Проект на строительство скважин",                      contractor:"E&P Petro Consulting",      amt:21053,   fact:5275,   stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"04.04.2026", deadline:"",           critical:false, startDate:"28.09.2026"},
   {nr:18, name:"Сепаратор",                                            contractor:"Промышленные системы ПВ",   amt:21053,   fact:20734,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"01.07.2026", deadline:"",           critical:false, startDate:"03.09.2026"},
   {nr:19, name:"Лабораторные исследования керна",                      contractor:"ТОО Stratum Cer",           amt:18947,   fact:18927,  stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"24.09.2026", deadline:"",           critical:false, startDate:"20.02.2027"},
@@ -1090,12 +1126,12 @@ const PROCS = [
 
 const GANTT = [
   {sec:"Конкурсные процедуры",rows:[
-    {name:"Оборудование",         ps:"2026-06-01",pe:"2026-08-21",fs:"2026-06-01",fe:"2026-09-25",forecast:"2026-09-01"},
-    {name:"Бурение под ключ",     ps:"2026-07-08",pe:"2026-08-31",fs:"2026-07-08",fe:"2026-09-25",forecast:"2026-09-07"},
-    {name:"Исследования",         ps:"2026-06-22",pe:"2026-09-07",fs:"2026-06-22",fe:"2026-09-25",forecast:"2026-10-01"},
+    {name:"Оборудование",         ps:"2026-06-01",pe:"2026-08-21",fs:"2026-06-01",fe:"2026-09-27",forecast:"2026-09-01"},
+    {name:"Бурение под ключ",     ps:"2026-07-08",pe:"2026-08-31",fs:"2026-07-08",fe:"2026-09-27",forecast:"2026-09-07"},
+    {name:"Исследования",         ps:"2026-06-22",pe:"2026-09-07",fs:"2026-06-22",fe:"2026-09-27",forecast:"2026-10-01"},
   ]},
   {sec:"Поставка оборудования",rows:[
-    {name:"Поставка оборудования",ps:"2026-05-08",pe:"2026-11-07",fs:"2026-05-08",fe:"2026-09-25",forecast:"2026-11-27"},
+    {name:"Поставка оборудования",ps:"2026-05-08",pe:"2026-11-07",fs:"2026-05-08",fe:"2026-09-27",forecast:"2026-11-27"},
   ]},
   {sec:"Строительство выкидных линий",rows:[
     {name:"Скважина 430",ps:"2026-08-25",pe:"2026-09-05",fs:null,fe:null,forecastStart:"2026-10-05",forecastEnd:"2026-10-16"},
@@ -1116,7 +1152,7 @@ const GANTT = [
     {name:"Скважина 415",ps:"2027-02-03",pe:"2027-02-12",fs:null,fe:null,forecastStart:"2027-02-04",forecastEnd:"2027-02-13"},
   ]},
   {sec:"Мобилизация, бурение, освоение",rows:[
-    {name:"Скважина 430",ps:"2026-08-22",pe:"2026-09-30",fs:"2026-09-01",fe:null,forecastStart:"2026-09-22",forecastEnd:"2026-10-11",debit:"2026-10-18"},
+    {name:"Скважина 430",ps:"2026-08-22",pe:"2026-09-30",fs:"2026-09-01",fe:null,forecastStart:"2026-09-01",forecastEnd:"2026-10-11",debit:"2026-10-18"},
     {name:"Скважина 426",ps:"2026-10-01",pe:"2026-10-25",fs:null,fe:null,forecastStart:"2026-10-17",forecastEnd:"2026-11-05",debit:"2026-11-12"},
     {name:"Скважина 428",ps:"2026-10-26",pe:"2026-11-19",fs:null,fe:null,forecastStart:"2026-11-11",forecastEnd:"2026-11-30",debit:"2026-12-07"},
     {name:"Скважина 425",ps:"2026-11-20",pe:"2026-12-14",fs:null,fe:null,forecastStart:"2026-12-06",forecastEnd:"2026-12-25",debit:"2027-01-01"},
@@ -1129,7 +1165,7 @@ const GANTT = [
 const MONTHS = ["МАЙ 2026","ИЮНЬ 2026","ИЮЛЬ 2026","АВГУСТ 2026","СЕНТЯБРЬ 2026","ОКТЯБРЬ 2026","НОЯБРЬ 2026","ДЕКАБРЬ 2026","ЯНВАРЬ 2027","ФЕВРАЛЬ 2027","МАРТ 2027"];
 const GS = new Date("2026-05-01"), GE = new Date("2027-03-31");
 const GD = (GE - GS) / 864e5;
-const TODAY = new Date("2026-09-25");
+const TODAY = new Date("2026-09-27");
 
 /* ═══════════ ПРОГРЕСС ПО ГАНТУ ═══════════ */
 // Прогресс = Σ(отработанные факт-дни) / Σ(плановая длительность задач)
@@ -1379,7 +1415,7 @@ function dlClassByStr(dl) {
   const m = dl.match(/(\d{2})\.(\d{2})\.(\d{4})/);
   if (!m) return '';
   const d = new Date(m[3], m[2]-1, m[1]);
-  const today = new Date('2026-09-25');
+  const today = new Date('2026-09-27');
   const diff = (d - today) / 864e5;
   if (diff < 0) return 'red';
   if (diff <= 14) return 'amber';
@@ -1397,7 +1433,7 @@ function fmtDeadline(dateStr) {
 function dlClass(dateStr) {
   if (!dateStr) return '';
   const d = new Date(dateStr);
-  const today = new Date('2026-09-25');
+  const today = new Date('2026-09-27');
   const diff = (d - today) / 864e5;
   if (diff < 0) return 'red';
   if (diff <= 14) return 'amber';
@@ -1419,7 +1455,7 @@ function fmtD(s) {
 
 (function() {
   const inner = document.getElementById("ganttInner");
-  const todayPct = pct("2026-09-25");
+  const todayPct = pct("2026-09-27");
   const todayWeekIdx = Math.floor(todayPct / 100 * 44);
 
   let html = `<div class="g-head-sticky">
@@ -1463,7 +1499,7 @@ function fmtD(s) {
         <div class="${r.forecast?'g-bars has-forecast':'g-bars'}">
           <div class="g-grid">${grid}</div>
           ${pw > 0.1 ? `<div class="bar bar-plan" style="left:${pl}%" data-w="${pw}"></div>` : ""}
-          ${r.forecastStart ? `<div class="bar-forecast" style="left:${pct(r.forecastStart)}%;width:${Math.max(0.5,pct(r.debit || r.forecastEnd)-pct(r.forecastStart))}%"></div>` : r.forecast ? `<div class="bar-forecast" style="left:${pct(r.ps)}%;width:${pct(r.forecast)-pct(r.ps)}%"></div>` : ""}
+          ${r.forecastStart ? `<div class="bar-forecast" style="left:${pct(r.forecastStart)}%;width:${Math.max(0.5,(r.debit ? Math.max(pct(r.forecastStart)+0.5, pct(r.debit)-1.2) : pct(r.forecastEnd))-pct(r.forecastStart))}%"></div>` : r.forecast ? `<div class="bar-forecast" style="left:${pct(r.ps)}%;width:${pct(r.forecast)-pct(r.ps)}%"></div>` : ""}
           ${fl !== null && fw > 0.1 ? `<div class="bar bar-fact" style="left:${fl}%" data-w="${fw}"></div>` : ""}
           <div class="today-line" style="left:${todayPct}%"></div>
           ${oilHtml}
