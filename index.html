@@ -906,28 +906,28 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
 
   <div style="display:flex;flex-direction:column;gap:16px">
   <div class="chart-card" style="padding:20px">
-    <div class="chart-title">Статусы по договорам</div>
+    <div class="chart-title">Статусы по договорам <span style="font-weight:600;color:#9AAAC8;font-size:0.75em">(23)</span></div>
     <div class="st-rows">
       <div class="st-row">
         <div class="st-ico" style="background:#E6F6EE;color:#1A7A4A">✓</div>
         <div class="st-info"><div class="st-name">Подписано</div>
           <div class="st-track"><div class="st-fill" data-w="91.9" style="background:linear-gradient(90deg,#8FCCA8,#B8E0C8)"></div></div>
         </div>
-        <div class="st-nums"><b>17</b><span>$7,50 млн</span></div>
+        <div class="st-nums"><b>17</b></div>
       </div>
       <div class="st-row">
         <div class="st-ico" style="background:#FEF3E6;color:#8A5A00">◐</div>
         <div class="st-info"><div class="st-name">На согласовании</div>
-          <div class="st-track"><div class="st-fill" data-w="1.6" style="background:linear-gradient(90deg,#E8C48F,#F0D8B0)"></div></div>
+          <div class="st-track"><div class="st-fill" data-w="2.0" style="background:linear-gradient(90deg,#E8C48F,#F0D8B0)"></div></div>
         </div>
-        <div class="st-nums"><b>1</b><span>$0,13 млн</span></div>
+        <div class="st-nums"><b>2</b></div>
       </div>
       <div class="st-row">
         <div class="st-ico" style="background:#F0F4FA;color:#8A9AB8">○</div>
         <div class="st-info"><div class="st-name">Не начато</div>
-          <div class="st-track"><div class="st-fill" data-w="6.5" style="background:linear-gradient(90deg,#D4DCF0,#E8EEF8)"></div></div>
+          <div class="st-track"><div class="st-fill" data-w="6.1" style="background:linear-gradient(90deg,#D4DCF0,#E8EEF8)"></div></div>
         </div>
-        <div class="st-nums"><b>5</b><span>$0,55 млн</span></div>
+        <div class="st-nums"><b>4</b></div>
       </div>
     </div>
   </div>
@@ -1012,7 +1012,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
 </div>
 <div class="section-head" id="contracts">
   <div class="sh-num">2</div>
-  <div class="sh-title">Статус договоров</div>
+  <div class="sh-title">Статус договоров <span style="font-weight:600;color:#9AAAC8;font-size:0.7em">(23)</span></div>
   <div class="sh-line"></div>
 </div>
 
@@ -1062,6 +1062,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
     <span class="legend-crit-badge">⚠️</span>
     <span style="color:#5A3010">Критически важные договоры, влияющие на сроки начала бурения и на общий график проекта.</span>
   </div>
+  <div class="leg" style="margin-left:8px;padding-left:16px;border-left:1px solid #D4DCF0;color:#8A9AB8">Курс $/₸ — 475</div>
 </div>
 
 <!-- ═══ 3 ГРАФИК ═══ -->
@@ -1114,7 +1115,7 @@ const PROCS = [
   {nr:13, name:"Насосные штанги",                                      contractor:"АЗНО",                      amt:54703,   fact:50350,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"15.07.2026", deadline:"",           critical:false, startDate:"28.09.2026"},
   {nr:14, name:"Супервайзинг буровых работ",                           contractor:"Супервайзер",               amt:43314,   fact:43314,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"24.07.2026", deadline:"",           critical:false, startDate:"22.09.2026"},
   {nr:15, name:"Насос поддержания пластового давления",                contractor:"ТОО \"Актауский машиностроительный завод\"", amt:42105,   fact:43225,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"02.09.2026", deadline:"10.08.2026", critical:false, startDate:"15.10.2026"},
-  {nr:16, name:"Лабораторные исследования флюидов",                    contractor:"",                          amt:33331,   fact:null,   stages:["✓","✓","○"],  status:"ns",  statusLabel:"Не начато",          date:"",           deadline:"25.08.2026", critical:false, startDate:"20.10.2026"},
+  {nr:16, name:"Лабораторные исследования флюидов",                    contractor:"",                          amt:33331,   fact:null,   stages:["Конкурсная документация","✓","○"],  status:"rev",  statusLabel:"На согласовании",          date:"",           deadline:"07.10.2026", critical:false, startDate:"20.10.2026"},
   {nr:17, name:"Проект на строительство скважин",                      contractor:"E&P Petro Consulting",      amt:21053,   fact:5275,   stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"04.04.2026", deadline:"",           critical:false, startDate:"28.09.2026"},
   {nr:18, name:"Сепаратор",                                            contractor:"Промышленные системы ПВ",   amt:21053,   fact:20734,  stages:["↺","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"01.07.2026", deadline:"",           critical:false, startDate:"03.09.2026"},
   {nr:19, name:"Лабораторные исследования керна",                      contractor:"ТОО Stratum Cer",           amt:18947,   fact:18927,  stages:["✓","✓","✓"],                       status:"done", statusLabel:"Подписан",        date:"24.09.2026", deadline:"",           critical:false, startDate:"20.02.2027"},
