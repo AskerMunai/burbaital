@@ -780,7 +780,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
 <div class="hero">
   <div class="hero-content">
     <h1>Бурбайтал — Фаза 1<br>бурение 7 скважин</h1>
-    <p>Менеджер проекта — Василий Волков &nbsp;·&nbsp; 27 октября 2026 года</p>
+    <p>Менеджер проекта — Василий Волков &nbsp;·&nbsp; 29 октября 2026 года</p>
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-v" data-count="8.4" data-fmt="mln">$0</div><div class="hstat-l">Бюджет Фазы 1</div></div>
       <div class="hstat"><div class="hstat-v" data-count="7" data-fmt="int">0</div><div class="hstat-l">Скважин</div></div>
@@ -1075,7 +1075,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
   <div class="leg"><div style="width:22px;height:8px;border-radius:4px;background:#B8D4EC"></div>План</div>
   <div class="leg"><div style="width:22px;height:8px;border-radius:4px;background:rgba(26,74,138,.12);border:1.5px solid rgba(26,74,138,.55);box-sizing:border-box"></div>Прогноз</div>
   <div class="leg"><div style="width:22px;height:8px;border-radius:4px;background:linear-gradient(90deg,#1A4A8A,#2A6AC8)"></div>Факт</div>
-  <div class="leg"><div style="width:2px;height:14px;background:#E03030"></div>Сегодня — 27 октября 2026</div>
+  <div class="leg"><div style="width:2px;height:14px;background:#E03030"></div>Сегодня — 29 октября 2026</div>
   <div class="leg" style="margin-left:8px;padding-left:14px;border-left:1px solid #D4DCF0">
     <svg width="14" height="18" viewBox="0 0 14 18" fill="none"><path d="M7 0C7 0 0 7.5 0 11.5C0 15.09 3.13 18 7 18C10.87 18 14 15.09 14 11.5C14 7.5 7 0 7 0Z" fill="#1A1A2E"/><path d="M9.5 13C9.5 14.38 8.38 15.5 7 15.5" stroke="rgba(255,255,255,0.35)" stroke-width="1.2" stroke-linecap="round"/></svg>
     Ввод скважины в эксплуатацию (первый дебит)
@@ -1092,7 +1092,7 @@ html.pm tbody tr.total-row td{background:var(--dark)!important}
 
 <div class="footer">
   <b>Asker Munai</b> · Бурбайтал Фаза 1<br>
-  Отчёт для акционеров · 27 октября 2026 года
+  Отчёт для акционеров · 29 октября 2026 года
 </div>
 
 <script>
@@ -1164,12 +1164,12 @@ const GANTT = [
 const MONTHS = ["МАЙ 2026","ИЮНЬ 2026","ИЮЛЬ 2026","АВГУСТ 2026","СЕНТЯБРЬ 2026","ОКТЯБРЬ 2026","НОЯБРЬ 2026","ДЕКАБРЬ 2026","ЯНВАРЬ 2027","ФЕВРАЛЬ 2027","МАРТ 2027"];
 const GS = new Date("2026-05-01"), GE = new Date("2027-03-31");
 const GD = (GE - GS) / 864e5;
-const TODAY = new Date("2026-10-27");
+const TODAY = new Date("2026-10-29");
 
 /* ═══════════ ПРОГРЕСС ПО ГАНТУ ═══════════ */
 // Прогресс = Σ(отработанные факт-дни) / Σ(плановая длительность задач)
 function ganttProgress() {
-  return 66;
+  return 67;
 }
 const PROGRESS = ganttProgress();
 
@@ -1403,7 +1403,7 @@ function dlClassByStr(dl) {
   const m = dl.match(/(\d{2})\.(\d{2})\.(\d{4})/);
   if (!m) return '';
   const d = new Date(m[3], m[2]-1, m[1]);
-  const today = new Date('2026-10-27');
+  const today = new Date('2026-10-29');
   const diff = (d - today) / 864e5;
   if (diff < 0) return 'red';
   if (diff <= 14) return 'amber';
@@ -1421,7 +1421,7 @@ function fmtDeadline(dateStr) {
 function dlClass(dateStr) {
   if (!dateStr) return '';
   const d = new Date(dateStr);
-  const today = new Date('2026-10-27');
+  const today = new Date('2026-10-29');
   const diff = (d - today) / 864e5;
   if (diff < 0) return 'red';
   if (diff <= 14) return 'amber';
@@ -1443,9 +1443,9 @@ function fmtD(s) {
 
 (function() {
   const inner = document.getElementById("ganttInner");
-  const todayPct = pct("2026-10-27");
+  const todayPct = pct("2026-10-29");
   const todayWeekIdx = 23; // Октябрь, 4-й квадратик
-  const todayLinePct = (todayWeekIdx + 0.45) / 44 * 100; // почти середина 4-го квадратика
+  const todayLinePct = (todayWeekIdx + 0.9) / 44 * 100; // конец 4-го квадратика
 
   let html = `<div class="g-head-sticky">
   <div class="g-months">
