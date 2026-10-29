@@ -1485,7 +1485,7 @@ function fmtD(s) {
       }
       html += `<div class="g-row" data-name="${r.name}" data-ps="${r.ps}" data-pe="${r.pe}" data-fs="${r.fs||''}" data-fe="${(r.factDone||r.factFix) ? (r.fe||'') : ''}" data-fcs="${r.forecastStart || (r.forecast ? r.ps : '')}" data-fce="${r.forecastEnd || r.forecast || ''}" data-note="${r.note||''}">
         <div class="g-name">${r.name}</div>
-        <div class="g-dl ${((sec.sec==="Мобилизация, бурение, освоение" && r.name==="Скважина 430") || sec.sec==="Строительство выкидных линий" || (sec.sec==="Конкурсные процедуры" && (r.name==="Оборудование" || r.name==="Бурение под ключ"))) ? "green" : dlClassByStr(getGanttDeadline(r.name, sec.sec))}">${getGanttDeadline(r.name, sec.sec)}</div>
+        <div class="g-dl ${(sec.sec==="Конкурсные процедуры" && r.name==="Исследования") ? dlClassByStr(getGanttDeadline(r.name, sec.sec)) : "green"}">${getGanttDeadline(r.name, sec.sec)}</div>
         <div class="${r.forecast?'g-bars has-forecast':'g-bars'}">
           <div class="g-grid">${grid}</div>
           ${pw > 0.1 ? `<div class="bar bar-plan" style="left:${pl}%" data-w="${pw}"></div>` : ""}
